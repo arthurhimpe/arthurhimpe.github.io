@@ -209,3 +209,32 @@ footer {
   color: white;
   padding: 1rem;
 }
+
+/* =========================================================
+   📱 LISIBILITÉ MOBILE AMÉLIORÉE
+========================================================= */
+@media (max-width: 700px) {
+  body {
+    font-size: 16px;           /* un peu plus grand pour le confort */
+    line-height: 1.8;          /* plus d’espace entre les lignes */
+    padding: 0 15px;           /* évite que le texte touche les bords */
+    text-align: justify;       /* conserve le texte justifié */
+    hyphens: auto;             /* coupe automatiquement les mots longs */
+  }
+
+  section {
+    padding: 1.5rem 1rem;      /* marges plus souples */
+  }
+
+  p, li {
+    margin-bottom: 1.2em;      /* plus d’espace entre les paragraphes */
+  }
+
+  h2, h3 {
+    text-align: center;        /* titres centrés pour la lisibilité */
+  }
+
+  a {
+    word-break: break-word;    /* évite que les liens débordent */
+  }
+}
