@@ -90,7 +90,7 @@ section {
 
 .projets-container-CI {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* 3 projets par ligne */
+  grid-template-columns: repeat(2, 1fr);
   gap: 20px;
   margin-top: 20px;
   width: 100%;
@@ -127,7 +127,6 @@ section {
   max-width: 1000px;
 }
 
-/* Bloc image + texte côte à côte */
 .bloc-toyota {
   display: flex;
   align-items: center;
@@ -138,7 +137,6 @@ section {
   flex-direction: row-reverse;
 }
 
-/* Bloc multi-images + texte */
 .bloc-toyota-multi {
   display: flex;
   align-items: flex-start;
@@ -156,7 +154,6 @@ section {
   box-sizing: border-box;
 }
 
-/* Images */
 .photo-toyota {
   width: 45%;
   border-radius: 10px;
@@ -168,7 +165,6 @@ section {
   border-radius: 10px;
 }
 
-/* Texte */
 .texte-toyota {
   flex: 1;
   text-align: justify;
@@ -180,7 +176,7 @@ section {
 ========================================================= */
 @media (max-width: 900px) {
   .projets-container {
-    grid-template-columns: repeat(2, 1fr); /* 2 projets par ligne */
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
@@ -196,7 +192,7 @@ section {
 
 @media (max-width: 600px) {
   .projets-container {
-    grid-template-columns: 1fr; /* 1 projet par ligne */
+    grid-template-columns: 1fr;
   }
 }
 
@@ -215,26 +211,49 @@ footer {
 ========================================================= */
 @media (max-width: 700px) {
   body {
-    font-size: 16px;           /* un peu plus grand pour le confort */
-    line-height: 1.8;          /* plus d’espace entre les lignes */
-    padding: 0 15px;           /* évite que le texte touche les bords */
-    text-align: justify;       /* conserve le texte justifié */
-    hyphens: auto;             /* coupe automatiquement les mots longs */
+    font-size: 16px;
+    line-height: 1.8;
+    padding: 0 15px;
+    text-align: justify;
+    hyphens: auto;
   }
 
   section {
-    padding: 1.5rem 1rem;      /* marges plus souples */
+    padding: 1.5rem 1rem;
   }
 
   p, li {
-    margin-bottom: 1.2em;      /* plus d’espace entre les paragraphes */
+    margin-bottom: 1.2em;
   }
 
   h2, h3 {
-    text-align: center;        /* titres centrés pour la lisibilité */
+    text-align: center;
   }
 
   a {
-    word-break: break-word;    /* évite que les liens débordent */
+    word-break: break-word;
   }
+}
+
+/* =========================================================
+   🧩 CORRECTIONS RESPONSIVE — SUPPRESSION DU SCROLL HORIZONTAL
+========================================================= */
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+.projets-container,
+.projets-container-CI,
+.bloc-toyota,
+.bloc-toyota-multi {
+  box-sizing: border-box;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
 }
