@@ -86,7 +86,9 @@ section {
   margin-left: auto;
   margin-right: auto;
   padding: 0 20px;
+  overflow-y: hidden; /* supprime le scroll vertical pendant le hover */
 }
+
 
 .projets-container-CI {
   display: grid;
@@ -98,6 +100,7 @@ section {
   margin-left: auto;
   margin-right: auto;
   padding: 0 20px;
+  overflow-y: hidden; /* supprime le scroll vertical pendant le hover */
 }
 
 .projet {
@@ -106,12 +109,17 @@ section {
   text-align: center;
   padding: 15px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  transition: transform 0.2s;
+  transition: transform 0.2s, box-shadow 0.2s;
+  transform-origin: center center; /* important */
+  will-change: transform; /* optimise l’animation */
 }
+
 
 .projet:hover {
   transform: scale(1.03);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
 }
+
 
 .projet img {
   width: 100%;
@@ -122,22 +130,60 @@ section {
 /* =========================================================
    🚗 PAGE TOYOTA
 ========================================================= */
-.contenu-toyota {
+.contenu {
   margin: 40px auto;
   max-width: 1000px;
 }
 
-.bloc-toyota {
+.bloc-gauche {
   display: flex;
   align-items: center;
   gap: 30px;
 }
 
-.bloc-toyota.inverse {
+.bloc-droit {
+  display: flex;
+  align-items: center;
+  gap: 30px;
   flex-direction: row-reverse;
 }
 
-.bloc-toyota-multi {
+.bloc-milieu {
+  display: flex;
+  justify-content: center; /* centre horizontalement */
+  align-items: center;      /* centre verticalement (si tu veux aussi) */
+  margin: 40px 0;           /* espace au-dessus et en dessous */
+}
+
+
+
+.bloc-milieu img {
+  max-width: 80%;           /* l’image ne dépasse pas trop l’écran */
+  height: auto;
+  border-radius: 10px;      /* pour rester dans ton style doux */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.bloc-ligne {
+  display: flex;
+  justify-content: center;     /* centre la ligne dans la page */
+  align-items: flex-start;
+  gap: 20px;                   /* espace entre les images */
+  flex-wrap: wrap;             /* permet de passer à la ligne sur mobile */
+  margin: 40px auto;
+  max-width: 1000px;           /* même largeur que tes autres blocs */
+}
+
+.bloc-ligne img {
+  width: 30%;                  /* environ 3 images par ligne sur PC */
+  min-width: 250px;            /* évite qu'elles deviennent trop petites */
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  object-fit: cover;
+}
+
+.bloc-multi {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
@@ -145,7 +191,17 @@ section {
   margin-bottom: 40px;
 }
 
-.images-toyota {
+.bloc-gauche,
+.bloc-droit,
+.bloc-multi {
+  flex-wrap: wrap;
+  box-sizing: border-box;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+
+.images {
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -154,18 +210,18 @@ section {
   box-sizing: border-box;
 }
 
-.photo-toyota {
+.photo {
   width: 45%;
   border-radius: 10px;
 }
 
-.photo-toyota-multi {
+.photo-multi {
   width: 95%;
   height: auto;
   border-radius: 10px;
 }
 
-.texte-toyota {
+.texte {
   flex: 1;
   text-align: justify;
   line-height: 1.6;
@@ -239,14 +295,16 @@ footer {
    🧩 CORRECTIONS RESPONSIVE — SUPPRESSION DU SCROLL HORIZONTAL
 ========================================================= */
 html, body {
-  overflow-x: hidden;
+  overflow-x: hidden !important;
   width: 100%;
+  max-width: 100%;
 }
+
 
 .projets-container,
 .projets-container-CI,
-.bloc-toyota,
-.bloc-toyota-multi {
+.bloc-gauche,
+.bloc-multi {
   box-sizing: border-box;
   max-width: 100%;
   overflow-x: hidden;
@@ -256,4 +314,55 @@ img {
   max-width: 100%;
   height: auto;
   display: block;
+}
+
+@media (max-width: 900px) {
+  /* ✅ Les blocs image + texte passent en colonne */
+  .bloc-gauche,
+  .bloc-droit,
+  .bloc-multi {
+    flex-direction: column !important;
+    align-items: center;
+    text-align: center; /* recentre les textes */
+  }
+
+  /* ✅ Les textes prennent toute la largeur */
+  .bloc-gauche .texte,
+  .bloc-droit .texte,
+  .bloc-multi .texte {
+    max-width: 100%;
+    width: 100%;
+    padding: 0 10px;
+    text-align: justify;
+  }
+
+  /* ✅ Les images s’adaptent à l’écran */
+  .photo,
+  .photo-multi {
+    width: 90%;
+    max-width: 400px;
+  }
+
+  .images {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  .images img {
+    width: 90%;
+    max-width: 400px;
+  }
+}
+
+@media (max-width: 900px) {
+  h2 {
+    text-align: center;
+    margin-top: 1.5rem;
+  }
+
+  p {
+    line-height: 1.7;
+    margin-bottom: 1rem;
+  }
 }
