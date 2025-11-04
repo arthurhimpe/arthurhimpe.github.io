@@ -22,27 +22,23 @@ header {
   background-position: center;
   background-repeat: no-repeat;
   color: white;
+  padding: 2rem;
   text-align: center;
 
-  /* ✅ largeur totale garantie */
   position: relative;
+  width: 100%;
+  margin: 0 auto;
+
+  /* ✅ Garantit qu’il occupe tout l’écran visible sans bug sur Android */
   left: 50%;
   right: 50%;
   margin-left: -50vw;
   margin-right: -50vw;
   width: 100vw;
 
-  /* ✅ gestion iPhone avec encoche */
-  padding-top: calc(2rem + env(safe-area-inset-top));
-  padding-left: env(safe-area-inset-left);
-  padding-right: env(safe-area-inset-right);
-
-  /* ✅ si tu veux que ça couvre tout le haut visible */
-  min-height: 100vh;
-
+  /* ✅ Supprime tout débordement et ajustement parasite */
   box-sizing: border-box;
   overflow-x: hidden;
-  background-attachment: scroll;
 }
 
 
