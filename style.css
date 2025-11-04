@@ -25,22 +25,15 @@ header {
   padding: 2rem;
   text-align: center;
 
+  width: 100vw; /* ✅ largeur égale à la largeur de la fenêtre */
+  max-width: 100vw; /* ✅ empêche tout dépassement */
+  margin: 0;
+  left: 0;
+  right: 0;
   position: relative;
-  width: 100%;
-  margin: 0 auto;
-
-  /* ✅ Garantit qu’il occupe tout l’écran visible sans bug sur Android */
-  left: 50%;
-  right: 50%;
-  margin-left: -50vw;
-  margin-right: -50vw;
-  width: 100vw;
-
-  /* ✅ Supprime tout débordement et ajustement parasite */
   box-sizing: border-box;
-  overflow-x: hidden;
+  overflow-x: hidden; /* ✅ supprime les débordements horizontaux */
 }
-
 
 
 header h1 {
