@@ -20,10 +20,21 @@ header {
   background-image: url("images/image-haut-ensam.jpg");
   background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
   color: white;
   padding: 2rem;
   text-align: center;
+
+  width: 100vw; /* ✅ largeur égale à la largeur de la fenêtre */
+  max-width: 100vw; /* ✅ empêche tout dépassement */
+  margin: 0;
+  left: 0;
+  right: 0;
+  position: relative;
+  box-sizing: border-box;
+  overflow-x: hidden; /* ✅ supprime les débordements horizontaux */
 }
+
 
 header h1 {
   font-size: 3rem;
@@ -288,5 +299,33 @@ footer {
 
   a {
     word-break: break-word;
+  }
+}
+
+/* =========================================================
+   📱 CENTRAGE DES IMAGES DE LA SECTION ÉTUDE SUR MOBILE
+========================================================= */
+@media (max-width: 900px) {
+  .projets-container {
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center; /* ✅ centre chaque projet dans la grille */
+  }
+}
+
+@media (max-width: 600px) {
+  .projets-container {
+    grid-template-columns: 1fr; /* une seule colonne */
+    justify-items: center; /* ✅ centre le contenu dans la colonne */
+  }
+
+  .projet {
+    width: 90%; /* ✅ garde un peu d’espace sur les côtés */
+    margin: 0 auto;
+  }
+
+  .projet img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
