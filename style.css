@@ -3,38 +3,25 @@
 ========================================================= */
 body {
   font-family: Arial, sans-serif;
-  text-align: justify;
   margin: 0;
   padding: 0;
-  background-color: #fafafa;
-  color: #623802; /* couleur principale du texte */
-  overflow-x: hidden !important; /* 🔒 Empêche tout défilement horizontal */
+  background-color: #fff9e6;
+  color: #623802;
+  /* 🔒 Protection maximale contre le scroll horizontal */
+  overflow-x: hidden;
   width: 100%;
-  max-width: 100%;
 }
 
-/* =========================================================
-   🧭 EN-TÊTE
-========================================================= */
 header {
   background-image: url("images/image-haut-ensam.jpg");
   background-size: cover;
   background-position: center;
-  background-repeat: no-repeat;
   color: white;
-  padding: 2rem;
+  padding: 2rem 1rem; /* Padding réduit sur les côtés */
   text-align: center;
-
-  width: 100vw; /* ✅ largeur égale à la largeur de la fenêtre */
-  max-width: 100vw; /* ✅ empêche tout dépassement */
-  margin: 0;
-  left: 0;
-  right: 0;
-  position: relative;
-  box-sizing: border-box;
-  overflow-x: hidden; /* ✅ supprime les débordements horizontaux */
+  width: 100%; /* Utilisez 100% et non 100vw */
+  box-sizing: border-box; /* Crucial pour que le padding ne dépasse pas */
 }
-
 
 header h1 {
   font-size: 3rem;
@@ -81,26 +68,50 @@ nav ul li a:hover {
 /* =========================================================
    📄 SECTIONS
 ========================================================= */
+/* Modifie la règle existante pour les sections */
 section {
   padding: 2rem;
   max-width: 900px;
   margin: auto;
+
+  /* État initial : invisible et légèrement décalé vers le bas */
+  opacity: 0;
+  transform: translateY(30px);
+  transition:
+    opacity 1.2s ease-out,
+    transform 1.2s ease-out;
+}
+
+/* Classe ajoutée par JavaScript lors du scroll */
+section.reveal-visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* =========================================================
    🧱 PROJETS (grille à 3 colonnes)
 ========================================================= */
+/* =========================================================
+   🧱 PROJETS (Utilisation de Flexbox pour le centrage)
+========================================================= */
 .projets-container {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  display: flex; /* On passe en Flexbox */
+  flex-wrap: wrap; /* Permet de passer à la ligne */
+  justify-content: center; /* CENTRE les éléments, même sur la dernière ligne */
   gap: 20px;
   margin-top: 20px;
   width: 100%;
   max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
-  padding: 0 20px;
-  overflow: hidden;
+  padding: 20px;
+}
+
+/* On définit la largeur des projets pour simuler les 3 colonnes */
+.projets-container .projet {
+  width: calc(33.333% - 20px); /* 3 colonnes moins l'espace du gap */
+  min-width: 280px; /* Évite que les cases deviennent trop petites */
+  box-sizing: border-box;
 }
 
 .projets-container-CI {
@@ -112,8 +123,10 @@ section {
   max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
-  padding: 0 20px;
-  overflow: hidden;
+
+  /* --- MODIFICATIONS ICI --- */
+  padding: 20px; /* Augmenté ici aussi */
+  overflow: visible;
 }
 
 .projet {
@@ -121,15 +134,22 @@ section {
   border-radius: 20px;
   text-align: center;
   padding: 15px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
   transform-origin: center center;
   will-change: transform;
+
+  /* Ajoute ces 3 lignes pour l'alignement des boutons */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .projet:hover {
   transform: scale(1.03);
-  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
 .projet img {
@@ -178,7 +198,7 @@ section {
   max-width: 80%;
   height: auto;
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   display: block;
   margin: 0 auto;
 }
@@ -188,7 +208,7 @@ section {
   min-width: 250px;
   height: auto;
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   object-fit: cover;
   display: block;
   margin: 0 auto;
@@ -289,16 +309,43 @@ footer {
     padding: 1.5rem 1rem;
   }
 
-  p, li {
+  p,
+  li {
     margin-bottom: 1.2em;
   }
 
-  h2, h3 {
+  h2,
+  h3 {
     text-align: center;
   }
 
   a {
     word-break: break-word;
+  }
+}
+
+/* 1. Règle de base pour TOUTES les images du site */
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px; /* On remet tes arrondis ici */
+}
+
+/* 2. Style pour tes images de la section Études */
+.img-etudes {
+  display: block;
+  margin: 0 auto 15px auto; /* Centré par défaut (pour le mobile) */
+  width: 100%;
+  max-width: 500px;
+}
+
+/* 3. Adaptation pour les écrans larges (PC) */
+@media (min-width: 768px) {
+  .img-etudes {
+    float: left; /* On remet le texte à côté de l'image uniquement sur PC */
+    width: 350px; /* Taille fixe raisonnable sur grand écran */
+    margin-right: 20px; /* Espace entre l'image et le texte */
+    margin-bottom: 10px;
   }
 }
 
@@ -328,4 +375,323 @@ footer {
     margin-left: auto;
     margin-right: auto;
   }
+}
+
+@media (max-width: 600px) {
+  nav ul li {
+    display: block; /* Un lien par ligne pour cliquer facilement */
+    margin: 10px 0;
+  }
+
+  header h1 {
+    font-size: 2rem; /* Titre plus petit pour éviter les coupures */
+  }
+
+  section {
+    padding: 1.5rem 1rem; /* Plus d'espace pour le texte */
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Fond sombre */
+.modal-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 1000;
+  backdrop-filter: blur(5px);
+}
+
+/* La boîte carrée */
+.modal-carre {
+  position: relative;
+  background-color: #fff9e6; /* Ta couleur crème */
+  margin: 5vh auto; /* 5% du haut */
+  width: 90%;
+  max-width: 600px; /* Largeur max */
+  border-radius: 15px;
+  overflow: hidden; /* Coupe ce qui dépasse */
+  display: flex;
+  flex-direction: column;
+}
+
+/* Organisation interne : Image en haut, texte en bas (ou l'inverse) */
+.modal-content-wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.modal-image-container {
+  flex: 1; /* Prend 50% de l'espace */
+  overflow: hidden;
+}
+
+.modal-image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* L'image remplit son carré sans se déformer */
+}
+
+.modal-texte-container {
+  flex: 1; /* Prend l'autre 50% */
+  padding: 20px;
+  overflow-y: auto; /* Permet de scroller le texte s'il est trop long */
+  text-align: justify;
+}
+
+/* Bouton fermer */
+.btn-fermer {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 30px;
+  cursor: pointer;
+  z-index: 10;
+  color: #623802; /* Visible sur l'image */
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+/* Container des boutons en bas de chaque carte projet */
+.projet-actions {
+  display: flex;
+  justify-content: space-between; /* Un à gauche, un à droite */
+  gap: 10px;
+  margin-top: auto; /* Pousse les boutons vers le bas si le texte est court */
+  padding-top: 15px;
+}
+
+/* Style commun aux deux boutons */
+.btn-ouvrir,
+.btn-pdf {
+  flex: 1; /* Ils occupent la même largeur */
+  padding: 8px 5px;
+  border-radius: 12px; /* Bords arrondis comme demandé */
+  font-size: 0.85rem;
+  font-weight: bold;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition:
+    transform 0.2s,
+    filter 0.2s;
+  text-align: center;
+  display: inline-block;
+}
+
+/* Bouton Détails (Bleu clair) */
+.btn-ouvrir {
+  background-color: #add8e6; /* Bleu clair */
+  color: #003366; /* Texte foncé pour lisibilité */
+}
+
+/* Bouton PDF (Bleu plus foncé) */
+.btn-pdf {
+  background-color: #4682b4; /* Bleu acier / foncé */
+  color: white;
+}
+
+/* Effet au survol */
+.btn-ouvrir:hover,
+.btn-pdf:hover {
+  transform: scale(1.05);
+  filter: brightness(1.1);
+}
+
+/* L'arrière-plan (Overlay) avec flou */
+.modal-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(
+    255,
+    249,
+    230,
+    0.4
+  ); /* Couleur #fff9e6 avec transparence */
+
+  /* L'effet de flou crucial */
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px); /* Pour Safari */
+
+  z-index: 10000;
+  cursor: pointer;
+}
+
+/* La boîte de contenu (souple et crème) */
+.modal-carre {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  background-color: #fff9e6; /* Fond crème uni */
+  width: 90%;
+  max-width: 800px; /* Plus large sur PC */
+  height: auto; /* Hauteur s'adapte au contenu */
+  max-height: 85vh; /* Mais ne dépasse pas l'écran */
+
+  border-radius: 20px;
+  box-shadow: 0 20px 50px rgba(98, 56, 2, 0.2); /* Ombre marronnée douce */
+  cursor: default;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Organisation interne pour que ça reste beau sur mobile */
+.modal-content-wrapper {
+  display: flex;
+  flex-direction: row; /* Côte à côte sur PC */
+  height: 100%;
+}
+
+.modal-image-container {
+  flex: 1;
+  min-height: 300px;
+}
+
+.modal-texte-container {
+  flex: 1;
+  padding: 30px;
+  overflow-y: auto;
+}
+
+/* 📱 Adaptation Mobile : On empile l'image et le texte */
+@media (max-width: 768px) {
+  .modal-content-wrapper {
+    flex-direction: column;
+  }
+
+  .modal-carre {
+    width: 95%;
+    max-height: 90vh;
+  }
+
+  .modal-image-container {
+    min-height: 200px;
+    max-height: 250px;
+  }
+}
+
+/* Conteneur interne pour le défilement */
+.modal-scroll-container {
+  overflow-y: auto;
+  padding: 10px 30px 30px 30px;
+  flex: 1; /* Remplit l'espace sous le titre */
+}
+
+/* Structure d'une ligne */
+.modal-row {
+  display: flex;
+  align-items: center; /* Centre le texte verticalement par rapport à l'image */
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+/* L'astuce pour inverser : row-reverse */
+.modal-row.reverse {
+  flex-direction: row-reverse;
+}
+
+/* Les colonnes occupent 50% chacune */
+.modal-col-img,
+.modal-col-txt {
+  flex: 1;
+}
+
+.modal-col-img img {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  display: block;
+}
+
+.modal-col-txt p {
+  margin: 0;
+  line-height: 1.6;
+  text-align: justify;
+}
+
+/* 📱 Adaptation pour Mobile */
+@media (max-width: 768px) {
+  .modal-row,
+  .modal-row.reverse {
+    flex-direction: column; /* On empile tout verticalement */
+    gap: 15px;
+    margin-bottom: 30px;
+  }
+
+  .modal-col-img {
+    width: 100%;
+  }
+}
+
+/* Titre principal centré */
+.modal-titre-centre {
+  text-align: center;
+  width: 100%;
+  padding: 25px 0 10px 0;
+  margin: 0;
+  color: #623802;
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+header {
+  display: flex;
+  flex-direction: column; /* On aligne le bloc contenu et la nav verticalement */
+  align-items: center;
+  padding: 20px;
+  background-color: #fff9e6; /* Ton thème crème */
+}
+
+.header-content {
+  display: flex; /* Aligne le texte et l'image horizontalement */
+  align-items: center; /* Aligne verticalement l'image et le texte */
+  gap: 30px; /* Espace entre le texte et l'image */
+  margin-bottom: 20px;
+}
+
+.header-text {
+  text-align: right; /* Aligne le texte vers l'image pour un look pro */
+}
+
+.header-logo {
+  width: 150px; /* Taille de ton portrait */
+  height: 150px;
+  border-radius: 50%; /* Image ronde */
+  object-fit: cover;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Style rapide pour ta nav */
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  padding: 0;
+}
+
+nav a {
+  text-decoration: none;
+  color: #623802;
+  font-weight: bold;
 }

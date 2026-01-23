@@ -1,167 +1,486 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Arthur Himpe</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-
-  <!-- 🔹 En-tête -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Arthur Himpe</title>
+    <link rel="icon" type="image/png" href="Amtradszaloeil.png">
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- 🔹 En-tête -->
 <header>
   <div class="header-content">
-    <h1>Arthur Himpe</h1>
-    <h2>Étudiant à l’ENSAM</h2>
+    
+    <div class="header-text">
+      <h1>Arthur Himpe</h1>
+      <h2>Étudiant à l’ENSAM</h2>
+    </div>
 
-    <nav>
-      <ul>
-        <li><a href="#presentation">À propos</a></li>
-        <li><a href="#projets">Projets</a></li>
-        <li><a href="#centres d'interet">Centres d'intérêts</a></li>
-        <li><a href="#etudes">Études</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
+    <img src="images/photo-cv.png" alt="Photo Arthur Himpe" class="header-logo">
+
   </div>
+
+  <nav>
+    <ul>
+      <li><a href="#presentation">À propos</a></li>
+      <li><a href="#projets">Projets</a></li>
+      <li><a href="#centres-interet">Centres d'intérêts</a></li>
+      <li><a href="#etudes">Études</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
 </header>
 
+    <!-- 🔹 Section "À propos" -->
+    <section id="presentation">
+      <h2>À propos :</h2>
+      <p>Bienvenue sur ma page.</p>
+      <p>
+        Je suis Arthur Himpe, élève en deuxième année à l'école des Arts et
+        Métiers de Châlons-en-Champagne, et passionné d'ingénieurie automobile,
+        de cinéma, de musique, et de course à pied.
+      </p>
+      <p>
+        Ce site a pour but de présenter mes différents centres d'intérêts. Je
+        l'ai créé moi-même en m'aidant de mes connaissances, de l'IA et des
+        conseils de mes amis. Vous y retrouverez les projets que j'ai pu
+        réaliser au fur et à mesure des dernières années.
+      </p>
+      <p>
+        Le site a été codé en HTML/CSS/javascript et est fait pour être vu sur PC, la
+        version mobile risque donc d'avoir quelques problèmes d'affichage.
+      </p>
+      <p>
+        Je recueille avec plaisir toute correction ou commentaire à l'adresse
+        suivante : <a href="arthur.himpe@outlook.fr">arthur.himpe@outlook.fr</a>
+      </p>
+      <p>Bonne visite!</p>
+    </section>
 
+    <!-- 🔹 Section "Projets" -->
+    <section id="projets">
+      <h2>Projets</h2>
 
-  <!-- 🔹 Section "À propos" -->
-  <section id="presentation">
-    <h2>À propos :</h2>
-    <p>Bienvenue sur ma page.</p>
-    <p>Je suis Arthur Himpe, élève en deuxième année à l'école des Arts et Métiers de Châlons-en-Champagne, et passionné d'ingénieurie automobile, de cinéma, de musique, et de course à pied. </p>
-    <p>Ce site a pour but de présenter mes différents centres d'intérêts. Je l'ai créé moi-même en m'aidant de mes connaissances, de l'IA et des conseils de mes amis. Vous y retrouverez les projets que j'ai pu réaliser au fur et à mesure des dernières années.</p>
-    <p>Le site a été codé en HTML/CSS et est fait pour être vu sur PC, la version mobile risque donc d'avoir quelques problèmes d'affichage.</p>
-    <p>Je recueille avec plaisir toute correction ou commentaire à l'adresse suivante : <a href="arthur.himpe@outlook.fr">arthur.himpe@outlook.fr</a></p>
-    <p>Bonne visite!</p>
-    <p>[Le site est encore en phase de développement, certaines pages de projet ne sont donc pas disponibles.]</p>
-  </section>
+      <div class="projets-container">
 
-  <!-- 🔹 Section "Projets" -->
-  <section id="projets">
-    <h2>Les projets</h2>
+                <div class="projet">
+          <img src="images/reducteur 2.png" />
+          <h3>Le réducteur industriel</h3>
+          <div class="projet-actions">
+            <button class="btn-ouvrir" data-modal="modal-reducteur"><span style="margin-right:5px;">🔍</span>Détails</button>
+            <a href="Rapport-Réducteur.pdf" target="_blank" class="btn-pdf"
+              >Rapport (pdf)</a
+            >
+          </div>
+        </div>
 
-    <div class="projets-container">
-      <div class="projet">
-        <img src="images/Toyota/Toyot_trip.jpg" alt="Aperçu du projet 1">
-        <h3>La Toyota</h3>
-        <p>Une Toyota Corolla de 1992 en cours de restauration</p>
-        <a href="Toyota.html">Voir le projet</a>
-      </div>
+        <div class="projet">
+          <img src="images/projet Fab/projet fab2.png" />
+          <h3>Le projet Fab</h3>
+          <div class="projet-actions">
+            <button class="btn-ouvrir" data-modal="modal-fab"><span style="margin-right:5px;">🔍</span>Détails</button>
+            <a href="rapport-projet-fab.pdf" target="_blank" class="btn-pdf"
+              >Rapport (pdf)</a
+            >
+          </div>
+        </div>
 
-      <div class="projet">
-        <img src="images/Fonderie.jpg" alt="Aperçu du projet 2">
-        <h3>Le stage exécutant</h3>
-        <p>A la société des fonderies de Saint Dizier
-        </p>
-        <a href="stage.html">Voir le projet</a>
-      </div>
+        <div class="projet">
+          <img src="images/serre2.png" alt="Projet" />
+          <h3>La serre connectée</h3>
 
-      <div class="projet">
-        <img src="images/reducteur 2.png">
-        <h3>Le projet réducteur</h3>
-        <p>La conception d'un motoréducteur de A à Z, au plus proche des livrables d'une entreprise
-        </p>
-        <a href="réducteur.html">Voir le projet</a>
-      </div>
+          <div class="projet-actions">
+            <button class="btn-ouvrir" data-modal="modal-serre">
+              <span style="margin-right:5px;">🔍</span>Détails
+            </button>
+            <a href="CAMEX-IA-MYCOTECH.pdf" target="_blank" class="btn-pdf"
+              >Rapport (pdf)</a
+            >
+          </div>
+        </div>
 
-      <div class="projet">
-        <img src="images/projet Fab/projet fab.png">
-        <h3>Le projet Fab</h3>
-        <p>texte</p>
-        <a href="projet fab.html">Voir le projet</a>
-      </div>
+        <div class="projet">
+          <img src="images/Fonderie.jpg" alt="Aperçu du projet 2" />
+          <h3>Le stage exécutant</h3>
+          <div class="projet-actions">
+            <button class="btn-ouvrir" data-modal="modal-fonderie">
+              <span style="margin-right:5px;">🔍</span>Détails
+            </button>
+          </div>
+        </div>
 
-      <div class="projet">
-        <img src="images/projet FAO/projet FAO.png">
-        <h3>Le projet FAO</h3>
-        <p>texte</p>
-        <a href="projet FAO.html">Voir le projet</a>
-      </div>
+        <div class="projet">
+          <img src="images/Toyota/Toyot_trip.jpg" alt="Aperçu du projet 1" />
+          <h3>La Toyota</h3>
 
-      <div class="projet">
-        <img src="images/Projet échantillonneur/projet echantillonneur.png">
-        <h3>Le projet échantillonneur</h3>
-        <p>texte</p>
-        <a href="projet échantillonneur.html">Voir le projet</a>
-      </div>
-    </div>
-  </section>
+          <div class="projet-actions">
+            <button class="btn-ouvrir" data-modal="modal-toyota">
+              <span style="margin-right:5px;">🔍</span>Détails
+            </button>
+          </div>
+        </div>
+
+    </section>
 
     <!-- 🔹 Section "Centres d'interêts" -->
-  <section id="centres d'interet">
-    <h2>Les centres d'interêts</h2>
+    <section id="centres d'interet">
+      <h2>Centres d'interêts</h2>
 
-    <div class="projets-container-CI">
-      <div class="projet">
-        <img src="images/Cinéma/cinéma.jpg" alt="Aperçu du projet 2">
-        <h3>Le cinéma</h3>
-        <a href="Le cinéma.html">Voir</a>
-      </div>
+      <div class="projets-container-CI">
+        <div class="projet">
+          <img src="images/Cinéma/demoiselles.jpg" alt="Aperçu du projet 2" />
+          <h3>Le cinéma</h3>
+          <button class="btn-ouvrir" data-modal="modal-cinema">
+              <span style="margin-right:5px;">🔍</span>Détails
+            </button>
+        </div>
 
-      <div class="projet">
-        <img src="images/course/course.png" alt="Aperçu du projet 1">
-        <h3>La course à pied</h3>
-        <a href="Course_a_pied.html">Voir</a>
+        <div class="projet">
+          <img
+            src="images/course/marathon-paris.jpg"
+            alt="Aperçu du projet 1"
+          />
+          <h3>La course à pied</h3>
+          <button class="btn-ouvrir" data-modal="modal-course">
+              <span style="margin-right:5px;">🔍</span>Détails
+            </button>
+        </div>
       </div>
-    </div>
-  </section>
-  
+    </section>
 
     <!-- 🔹 Section "Etudes" -->
-<section id="etudes">
-  <h2>Les études</h2>
-  <h3>- L’ENSAM (2024-2027) :</h3>
-    <p><img src="images/Phot's-prom's.jpg" alt="Photo de l'ENSAM" width="400" style="float:left; margin-right:15px; border-radius:10px;">
-    L’École Nationale Supérieure d’Arts et Métiers (ENSAM) forme des ingénieurs dans de nombreux domaines techniques et industriels.
-    Elle est réputée pour son excellence en ingénierie mécanique et en innovation.
-    </p>
-    <p>Comme le suggèrent les projets présentés plus hauts, L'ENSAM permet à la fois d'avoir un enseignement de pointe en mécanique des solides et en dynamique des fluides, mais aussi d'être libre à travers la réalisation de projets mêlants travail d'équipe, ingéniosité, CAO et FAO.</p>
-    <p>La vie associative à l'école est extrêmement riche et permet de lier des liens très forts au sein de la promotion. Les espaces associatifs et la volonté des gens permettent de mettre en oeuvre des projets motivants comme celui de la Toyota Corolla.
-        <BR>C'était l'école que je souhaitait avoir en sortie de prépa.</p>
-    <p><BR></p>
-    <h3>- La prépa PTSI/PT* au lycée Raspail (Paris 14, 2022-2024) :</h3>
-    <p><img src="images/photo PTstar.jpg" alt="Photo Raspail" width="400" style="float:left; margin-right:15px; border-radius:10px;"></p>
-    <p></p>
-    <p>La classe préparatoire est une filière scientifique de haut niveau en deux ans : Une première année en PTSI (Physique, Technologie et Sciences de l'ingénieur), puis une seconde en PT*, renforcant fortement les compétences acquises en première année.</p>
-    <p>Au Lycée Raspail, l’esprit de la prépa est « fondé sur le respect et la motivation de tous les étudiants, quels que soient leur niveau ». Elle m'a permis, alors que je n'avais pas suivi de cours de mathématiques en terminale, et grâce à des enseignants extrêmement pédagogues et bienveillants, de m'améliorer dans des domaines qui me paraissaient incompréhensibles.</p>
-    <p>Ces deux ans ont aussi étés l'occasion de former des liens tenaces avec des étudiants très intéressants et aux aspirations variées.</p>
+    <section id="etudes">
+      <h2>Etudes</h2>
+      <h3>- L’ENSAM (2024-2027) :</h3>
+      <p>
+        <img
+          src="images/Phot's-prom's.jpg"
+          alt="Photo de l'ENSAM"
+          class="img-etudes"
+        />
+        L’École Nationale Supérieure d’Arts et Métiers (ENSAM) forme des
+        ingénieurs dans de nombreux domaines techniques et industriels. Elle est
+        réputée pour son excellence en ingénierie mécanique et en innovation.
+      </p>
+      <p>
+        Comme le suggèrent les projets présentés plus hauts, L'ENSAM permet à la
+        fois d'avoir un enseignement de pointe en mécanique des solides et en
+        dynamique des fluides, mais aussi d'être libre à travers la réalisation
+        de projets mêlants travail d'équipe, ingéniosité, CAO et FAO.
+      </p>
+      <p>
+        La vie associative à l'école est extrêmement riche et permet de lier des
+        liens très forts au sein de la promotion. Les espaces associatifs et la
+        volonté des gens permettent de mettre en oeuvre des projets motivants
+        comme celui de la Toyota Corolla. <br />C'était l'école que je
+        souhaitait avoir en sortie de prépa.
+      </p>
+      <p><br /></p>
+      <h3>- La prépa PTSI/PT* au lycée Raspail (Paris 14, 2022-2024) :</h3>
+      <p>
+        <img
+          src="images/photo PTstar.jpg"
+          alt="Photo Raspail"
+          class="img-etudes"
+        />
+      </p>
+      <p></p>
+      <p>
+        La classe préparatoire est une filière scientifique de haut niveau en
+        deux ans : Une première année en PTSI (Physique, Technologie et Sciences
+        de l'ingénieur), puis une seconde en PT*, renforcant fortement les
+        compétences acquises en première année.
+      </p>
+      <p>
+        Au Lycée Raspail, l’esprit de la prépa est « fondé sur le respect et la
+        motivation de tous les étudiants, quels que soient leur niveau ». Elle
+        m'a permis, alors que je n'avais pas suivi de cours de mathématiques en
+        terminale, et grâce à des enseignants extrêmement pédagogues et
+        bienveillants, de m'améliorer dans des domaines qui me paraissaient
+        incompréhensibles.
+      </p>
+      <p>
+        Ces deux ans ont aussi été l'occasion de former des liens tenaces avec
+        des étudiants très intéressants et aux aspirations variées.
+      </p>
+    </section>
 
+    <!-- 🔹 Section "Contact" -->
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>
+        📧 Mail :
+        <a href="mailto:arthur.himpe@outlook.fr"> arthur.himpe@outlook.fr </a>
+      </p>
+      <p>
+        🔗 LinkedIn :
+        <a
+          href="https://www.linkedin.com/in/himpe-arthur"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          www.linkedin.com/in/himpe-arthur
+        </a>
+      </p>
+    </section>
 
+    <!-- 🔹 Pied de page -->
+    <footer>
+      <p>&copy; 2026 Arthur Himpe – Tous droits réservés</p>
+    </footer>
 
+    <script src="script.js"></script>
+
+    <!-- Sections modales (boutons détails)-->
+
+<div id="modal-fab" class="modal-overlay">
+    <div class="modal-carre">
+        <span class="btn-fermer">&times;</span>
+        <h2 class="modal-titre-centre">Projet de Fabrication Mécanique</h2>
+        <div class="modal-scroll-container">
+            <div class="modal-row">
+                <div class="modal-col-img">
+                    <img src="images/projet Fab/palier-CAO.png" alt="Modélisation du Pivot">
+                </div>
+                <div class="modal-col-txt">
+                    <h3>Contexte et Objectif</h3>
+                    <p>L'objectif de ce projet était de définir le processus complet de fabrication d'un <strong>Pivot</strong>. Ce travail a nécessité l'analyse des spécifications géométriques et dimensionnelles pour garantir la fonctionnalité de la pièce dans son ensemble mécanique.</p>
+                </div>
+            </div>
+            <div class="modal-row reverse">
+                <div class="modal-col-img">
+                    <img src="images/projet Fab/fab.png" alt="Gamme de fabrication">
+                </div>
+                <div class="modal-col-txt">
+                    <h3>Analyse de Fabrication</h3>
+                    <p>Nous avons réalisé une étude approfondie incluant :</p>
+                    <ul style="list-style: none; padding: 0;">
+                        <li>📐 <strong>Analyse du dessin de définition</strong> et des surfaces fonctionnelles.</li>
+                        <li>🛠️ <strong>Choix du brut</strong> (moulage en sable) et calcul des surépaisseurs d'usinage.</li>
+                        <li>⚙️ <strong>Ordonnancement des phases</strong> : Tournage, fraisage et perçage.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="modal-row">
+                <div class="modal-col-txt">
+                    <h3>Expertise Logicielle & Méthodologie</h3>
+                    <p>Ce projet a mobilisé des compétences avancées en ingénierie assistée par ordinateur :</p>
+                    <ul style="list-style: none; padding: 0;">
+                        <li>💻 <strong>CAO (CATIA V5)</strong> : Modélisation précise du pivot et conception du montage d'usinage complexe.</li>
+                        <li>⚙️ <strong>Méthodologie de fabrication</strong> : Détermination des antériorités et ordonnancement optimal des opérations pour réduire les temps de cycle.</li>
+                        <li>📏 <strong>Métrologie</strong> : Analyse des tolérances géométriques et dimensionnelles pour assurer l'interchangeabilité des pièces.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="modal-reducteur" class="modal-overlay">
+    <div class="modal-carre">
+        <span class="btn-fermer">&times;</span>
+        <h2 class="modal-titre-centre">Projet Réducteur Industriel</h2>
+        <div class="modal-scroll-container">
+            <div class="modal-row">
+                <div class="modal-col-txt">
+                    <h3>Contexte du Projet</h3>
+                    <p>Conception complète d'un réducteur à engrenages pour des applications industrielles, incluant le dimensionnement, les calculs de résistance et l'optimisation des performances.</p>
+                </div>
+            </div>
+            <div class="modal-row reverse">
+                <div class="modal-col-img">
+                    <img src="images/projet reducteur/reducteur.png" alt="Réducteur">
+                </div>
+                <div class="modal-col-txt">
+                    <h3>Spécifications Techniques</h3>
+                    <ul style="list-style: none; padding: 0;">
+                        <li>⚙️ <strong>Rapport de réduction :</strong> 5</li>
+                        <li>🚀 <strong>Puissance de sortie :</strong> 7.5 kW</li>
+                        <li>📈 <strong>Rendement minimum :</strong> 95%</li>
+                        <li>⏳ <strong>Durée de vie :</strong> 22 000 heures</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="modal-row">
+                <div class="modal-col-txt">
+                    <h3>Conception et Dimensionnement</h3>
+                    <p>Utilisation de <strong>CATIA V5</strong> pour la modélisation 3D complète, avec calculs de résistance pour les arbres, les roulements et le dimensionnement des engrenages. Validation par simulation par éléments finis (FEA) sous <strong>SolidWorks</strong>.</p>
+                    <h3>Innovations et Matériaux</h3>
+                    <p>Optimisation du profil de denture pour réduire le bruit et améliorer l'efficacité. Sélection de matériaux appropriés (acier traité dans la masse <strong>35CrMo4</strong>) pour garantir la durée de vie spécifiée.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="modal-serre" class="modal-overlay">
+  <div class="modal-carre">
+    <span class="btn-fermer">&times;</span>
+    <h2 class="modal-titre-centre">Projet CAMEX-IA : Serre Automatisée</h2>
+    <div class="modal-scroll-container">
+      <div class="modal-row">
+        <div class="modal-col-img">
+          <img src="images/projet mycotech/serre.png" alt="Concept Serre">
+        </div>
+        <div class="modal-col-txt">
+          <h3>Contexte et Objectifs</h3>
+          <p>Ce projet s'inscrit dans le cadre du consortium <strong>CAMEX-IA</strong>. L'objectif consiste à concevoir une serre automatisée pour la culture de pleurotes, qui régulera activement plusieurs paramètres pour optimiser le rendement en fonction des différents stades de pousse du champignon</p>
+          <p style="margin-top: 15px;">Ces facteurs sont monitorés en temps réel grace à un système fonctionnant avec <strong>Node red</strong> sur un <strong>Raspberry Pi</strong>.</p>
+        </div>
+      </div>
+      <div class="modal-row reverse">
+        <div class="modal-col-img">
+          <img src="images/projet mycotech/explication.png" alt="Concept Serre">
+        </div>
+    <div class="modal-col-txt">
+        <h3>Optimisation des Paramètres de Culture</h3>
+        <p>Le pilotage de la serre repose sur la régulation précise de quatre facteurs environnementaux critiques pour le développement fongique :</p>
+        <ul style="list-style: none; padding: 0; margin-top: 15px;">
+            <li>🌡️ <strong>La Température</strong> : Maintenue de manière stable pour assurer une fructification optimale.</li>
+            <li>💧 <strong>L'Hygrométrie</strong> : Contrôlée via un système d'humidification pour maintenir le taux d'humidité.</li>
+            <li>🌬️ <strong>Le Taux de CO2</strong> : Régulé par une ventilation afin de garantir le renouvellement de l'air.</li>
+            <li>💡 <strong>La Luminosité</strong> : Ajustée pour simuler les cycles naturels nécessaires à la croissance des pleurotes.</li>
+        </ul>
+        
+    </div>
+</div>
+    </div>
+  </div>
+</div>
+
+<div id="modal-cinema" class="modal-overlay">
+    <div class="modal-carre">
+        <span class="btn-fermer">&times;</span>
+        <h2 class="modal-titre-centre">Le Cinéma</h2>
+        <div class="modal-scroll-container">
+            <div class="modal-row">
+                <div class="modal-col-img">
+                    <img src="images/Cinéma/réunion.jpg" alt="Photo reunion">
+                </div>
+                <div class="modal-col-txt">
+                    <p>Le cinéma est très important pour moi car il permet de voyager. Sa grande force est sa capacité à transmettre les émotions, et il est utile pour prendre du recul sur certains sujets, pour mettre en lumière des combats, ou simplement pour se détendre.</p>
+                </div>
+            </div>
+            <div class="modal-row reverse">
+                <div class="modal-col-img">
+                    <img src="images/Cinéma/remise.jpg" alt="Photo remise">
+                </div>
+                <div class="modal-col-txt">
+                    <p>J'ai eu le plaisir de participer à un festival de films de guerre en tant que membre d'un jury étudiant de 12 personnes, avec qui j'ai pu discuter de notre vision sur les 11 films de la sélection.</p>
+                    <p>Cette expérience a été particulièrement enrichissante, me permettant de développer mon esprit critique et ma culture.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="modal-course" class="modal-overlay">
+    <div class="modal-carre">
+        <span class="btn-fermer">&times;</span>
+        <h2 class="modal-titre-centre">La course à pied</h2>
+        <div class="modal-scroll-container">
+            <div class="modal-row">
+                <div class="modal-col-img">
+                    <img src="images/course/bures.jpg" alt="Bures sur Yvette">
+                </div>
+                <div class="modal-col-txt">
+                    <p>La course à pied est pour moi une école de la persévérance. Elle m'apprend à gérer l'effort sur la durée et à rester focalisé sur un objectif. La progression s'obtient par une préparation rigoureuse et une analyse constante de ses indicateurs de performance (allure, cardio, récupération).</p>
+                </div>
+            </div>
+            <div class="modal-row reverse">
+                <div class="modal-col-img">
+                    <img src="images/course/enfants sans cancer.jpg" alt="Enfants sans cancer">
+                </div>
+                <div class="modal-col-txt">
+                    <p>Après 10 ans de judo en compétition, j'ai trouvé dans la course l'équilibre parfait. C'est un sport qui allie rigueur technique et liberté totale.</p>
+                    <p><strong>Si vous êtes partants pour une course (d'un 5km à un marathon), envoyez-moi un message !</strong></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="modal-fonderie" class="modal-overlay">
+    <div class="modal-carre">
+        <span class="btn-fermer">&times;</span>
+        <h2 class="modal-titre-centre">Le stage executant</h2>
+        <div class="modal-scroll-container">
+            <div class="modal-row">
+                <div class="modal-col-txt">
+                    <h3>Contexte</h3>
+                    <p>Le stage executant de l'ENSAM a pour but de faire découvrir le monde du travail en entreprise, de lui faire comprendre les réalités de terrain, de développer son humilité, et de favoriser une meilleure communication future avec les opérateurs en tant que futur cadre.</p>
+                    <p>J'ai eu la chance de pouvoir effectuer le mien dans la société des Fonderies de Saint Dizier, qui est une entreprise spécialisée dans la production de pièces de voieries (bouches d'égouts, caniveaux...) en fonte grise. </p>
+                </div>
+            </div>
+            <div class="modal-row reverse">
+                <div class="modal-col-img">
+                    <img src="images/stage/fusion.png" alt="Fonderie">
+                </div>
+                <div class="modal-col-txt">
+                  <p>Les pièces sont produites via un procédé écoresponsable de moulage en sable, recyclé à 98 %. Le cycle débute par une fusion automatisée en fours de 5 tonnes, où la composition est ajustée. Les moules sont formés par une machine DISA compressant le sable entre des plaques modèles spécifiques. Après la coulée par système de quenouille et le décochage, les pièces subissent grenaillage, ébavurage manuel et peinture sur convoyeur. Un contrôle qualité garantit la conformité tout au long du processus.</p>
+                </div>
+            </div>
+            <div class="modal-row">
+                <div class="modal-col-txt">
+                    <h3>Expérience</h3>
+                    <p>Le stage a débuté par une immersion de deux semaines au sein de la ligne de finition, permettant de tester les enjeux de quatre postes clés : le <strong>décochage</strong>, la <strong>mise en position</strong> pour la grenailleuse, l’<strong>ébavurage</strong> technique sous haute cadence et la <strong>palettisation</strong> finale. Cette phase a permis d'appréhender les contraintes thermiques et physiques de la production.</p>
+                    <p>La seconde mission a porté sur l'optimisation logistique via l'installation d'un système de stockage dynamique <strong>Kardex</strong>. L'objectif était de réorganiser le magasin de maintenance pour <strong>réduire les délais d'intervention</strong>. Ce travail a mobilisé une solide <strong>culture technologique</strong> pour le référencement des pièces  dans l'<strong>ERP</strong> et des compétences informatiques (<strong>XLS, SQL</strong>) pour la gestion de base de données. Enfin, la mission s'est conclue par la rédaction de <strong>supports de formation</strong> pour assurer le transfert de compétences logiciel aux équipes.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="modal-toyota" class="modal-overlay">
+  <div class="modal-carre">
+    <span class="btn-fermer">&times;</span>
+    <h2 class="modal-titre-centre">Restauration : Toyota Corolla 1992</h2>
     
-  <!-- 🔹 Section "Contact" -->
-<section id="contact">
-  <h2>Contact</h2>
-  <p>
-    📧 Mail : 
-    <a href="mailto:arthur.himpe@outlook.fr">
-      arthur.himpe@outlook.fr
-    </a>
-  </p>
-  <p>
-    🔗 LinkedIn : 
-    <a href="https://www.linkedin.com/in/himpe-arthur" target="_blank" rel="noopener noreferrer">
-      www.linkedin.com/in/himpe-arthur
-    </a>
-  </p>
-  <p>
-    📑 CV : 
-    <a href="https://scanned.page/p/8CBtsj" target="_blank" rel="noopener noreferrer">
-      CV scanné
-    </a>
-  </p>
-</section>
+    <div class="modal-scroll-container">
+      
+      <div class="modal-row">
+        <div class="modal-col-img">
+          <img src="images/Toyota/Toyot_trip.jpg" alt="Toyota Corolla 1992">
+        </div>
+        <div class="modal-col-txt">
+          <h3>L'histoire du véhicule</h3>
+          <p>Cette <strong>Toyota Corolla de 1992</strong> a appartenu pendant 33 ans à un propriétaire portugais avant d'être cédée à un ami australien pour un road trip européen. Récupérée à <strong>Munich</strong> à l'été 2025, elle a été rapatriée à Châlons-en-Champagne pour entamer un cycle complet de <strong>restauration</strong>.</p>
+        </div>
+      </div>
 
+      <div class="modal-row reverse">
+        <div class="modal-col-img">
+          <img src="images/Toyota/Screenshot_20251029-212729__01.jpg" alt="Objectif Restauration">
+        </div>
+        <div class="modal-col-txt">
+          <h3>Objectifs Techniques</h3>
+          <p>Le but est d'acquérir des compétences pratiques en <strong>mécanique automobile</strong> et en <strong>carrosserie</strong>. Le projet porte sur la remise en état du <strong>moteur 2E</strong> (75 ch), le réglage du <strong>carburateur</strong> et la fiabilisation du démarrage.</p>
+          <p>Côté esthétique, un travail important de <strong>soudure</strong> et de <strong>traitement anticorrosion</strong> est nécessaire pour éliminer la rouille perforante avant une peinture complète en blanc.</p>
+        </div>
+      </div>
 
-  <!-- 🔹 Pied de page -->
-  <footer>
-    <p>&copy; 2025 Arthur Himpe – Tous droits réservés - Actualisé en novembre 2025</p>
-  </footer>
+      <div class="modal-row">
+        <div class="modal-col-img">
+           <img src="images/Toyota/moteur.jpg" alt="Moteur Toyota" style="margin-bottom: 10px;">
+           <img src="images/Toyota/intérieur Toyota.jpg" alt="Intérieur Toyota">
+        </div>
+        <div class="modal-col-txt">
+          <h3>Travaux Réalisés</h3>
+          <ul style="list-style: none; padding: 0;">
+            <li>✅ <strong>Administratif</strong> : Quitus fiscal et <strong>carte grise française</strong>.</li>
+            <li>🔧 <strong>Moteur</strong> : Test des <strong>compressions cylindres</strong>, vidange et remplacement du liquide de refroidissement.</li>
+            <li>🧪 <strong>Restauration</strong> : Dérouillage des supports radiateur par <strong>électrolyse</strong>.</li>
+          </ul>
 
-  <script src="script.js"></script>
-</body>
+          <h3>Défis à venir</h3>
+          <p>Le programme de maintenance reste conséquent : restauration du <strong>carburateur</strong>, réglage du <strong>parallélisme</strong>, remplacement du <strong>toit ouvrant</strong> et réfection complète de l'<strong>admission d'air</strong>. Un nettoyage méticuleux de la <strong>baie moteur</strong> et de l'intérieur viendra finaliser le projet.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+  </body>
 </html>
