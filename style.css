@@ -379,17 +379,6 @@ img {
     grid-template-columns: 1fr;
     padding: 15px; /* On réduit un peu le padding pour gagner de la place */
   }
-
-  .projet {
-    width: 90%; /* ✅ garde un peu d’espace sur les côtés */
-    margin: 0 auto;
-  }
-
-  .projet img {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-  }
 }
 
 @media (max-width: 600px) {
