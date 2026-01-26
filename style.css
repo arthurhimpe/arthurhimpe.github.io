@@ -24,14 +24,24 @@ body {
 }
 
 header {
+  /* --- AFFICHAGE & ALIGNEMENT --- */
+  display: flex;
+  flex-direction: column;   /* Empile les éléments (logo, titre, nav) */
+  justify-content: center;  /* Centre verticalement si le header a une hauteur */
+  align-items: center;      /* Centre horizontalement tous les enfants */
+  text-align: center;       /* Centre le texte à l'intérieur des éléments */
+  
+  /* --- DIMENSIONS & ESPACEMENT --- */
+  width: 100%;
+  box-sizing: border-box;   /* Le padding reste à l'intérieur des 100% */
+  padding: 2rem 1rem;
+  
+  /* --- APPARENCE & IMAGE --- */
+  background-color: #fff9e6; /* Couleur de secours pendant le chargement */
   background-image: url("images/image-haut-ensam.jpg");
   background-size: cover;
   background-position: center;
-  color: white;
-  padding: 2rem 1rem; /* Padding réduit sur les côtés */
-  text-align: center;
-  width: 100%; /* Utilisez 100% et non 100vw */
-  box-sizing: border-box; /* Crucial pour que le padding ne dépasse pas */
+  color: white;             /* Texte en blanc pour contrer l'image */
 }
 
 header h1 {
@@ -121,7 +131,6 @@ section.reveal-visible {
 /* On définit la largeur des projets pour simuler les 3 colonnes */
 .projets-container .projet {
   width: calc(33.333% - 20px); /* 3 colonnes moins l'espace du gap */
-  min-width: 280px; /* Évite que les cases deviennent trop petites */
   box-sizing: border-box;
 }
 
@@ -675,14 +684,6 @@ img {
   font-weight: bold;
 }
 
-header {
-  display: flex;
-  flex-direction: column; /* On aligne le bloc contenu et la nav verticalement */
-  align-items: center;
-  padding: 20px;
-  background-color: #fff9e6; /* Ton thème crème */
-}
-
 .header-content {
   display: flex; /* Aligne le texte et l'image horizontalement */
   align-items: center; /* Aligne verticalement l'image et le texte */
@@ -695,13 +696,17 @@ header {
 }
 
 .header-logo {
-  width: 150px; /* Taille de ton portrait */
-  height: 150px;
-  border-radius: 50%; /* Image ronde */
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
   object-fit: cover;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  
+  /* --- AJOUT DE LA BORDURE --- */
+  border: 2px solid #ffffff; /* '2px' pour la finesse, 'solid' pour une ligne pleine */
+  
+  /* On ajuste un peu l'ombre pour qu'elle soit plus visible avec la bordure */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); 
 }
-
 /* Style rapide pour ta nav */
 nav ul {
   list-style: none;
