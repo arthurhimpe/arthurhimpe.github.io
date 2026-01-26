@@ -757,15 +757,21 @@ nav a {
   /* --- Navigation Mobile --- */
   nav ul {
     display: flex;
-    flex-wrap: wrap; /* Les liens passent à la ligne si besoin */
+    flex-direction: row;      /* Force l'alignement horizontal */
+    flex-wrap: nowrap;        /* Interdit le passage à la ligne */
     justify-content: center;
     padding: 0;
-    gap: 10px;
-    font-size: 0.9rem;
+    gap: 8px;                 /* Espace réduit entre les items */
+    width: 100%;
+    overflow-x: auto;         /* Sécurité : permet de slider si l'écran est minuscule */
   }
   
-  nav ul li {
-    list-style: none;
+  nav ul li a {
+    font-size: 0.75rem;       /* Texte plus petit (environ 12px) */
+    text-decoration: none;
+    color: white;             /* Selon ton thème */
+    white-space: nowrap;      /* Empêche un mot de passer à la ligne dans le lien */
+    padding: 4px 2px;         /* Espace minimal pour cliquer */
   }
 }
 
