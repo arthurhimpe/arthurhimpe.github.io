@@ -739,9 +739,9 @@ nav a {
 
   .header-logo {
     /* On réduit un peu la taille du portrait sur mobile */
-    width: 90px;
-    height: 90px;
-    border-width: 1.5px; /* Bordure plus fine car logo plus petit */
+    width: 0px;
+    height: 0px;
+    border-width: 0px; /* Bordure plus fine car logo plus petit */
   }
 
   header h1 {
@@ -761,7 +761,7 @@ nav a {
     flex-wrap: nowrap;        /* Interdit le passage à la ligne */
     justify-content: center;
     padding: 0;
-    gap: 8px;                 /* Espace réduit entre les items */
+    gap: 12px;                 /* Espace réduit entre les items */
     width: 100%;
     overflow-x: auto;         /* Sécurité : permet de slider si l'écran est minuscule */
   }
