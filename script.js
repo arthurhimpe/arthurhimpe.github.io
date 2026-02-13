@@ -39,18 +39,29 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // Fermeture par le bouton X ou par le clic sur le fond
-  window.addEventListener("click", (e) => {
-    // Si l'élément cliqué possède la classe 'modal-overlay'
-    if (e.target.classList.contains("modal-overlay")) {
-      e.target.style.display = "none";
-      document.body.style.overflow = "auto";
-    }
-
-    // Si l'élément cliqué est le bouton de fermeture X
-    if (e.target.classList.contains("btn-fermer")) {
-      e.target.closest(".modal-overlay").style.display = "none";
-      document.body.style.overflow = "auto";
-    }
-  });
+// Fermeture par le bouton X ou par le clic sur le fond
+window.addEventListener("click", (e) => {
+  fermerModal(e);
 });
+
+// Ajout du support tactile pour iOS
+window.addEventListener("touchend", (e) => {
+  fermerModal(e);
+});
+
+function fermerModal(e) {
+  // Si l'élément cliqué possède la classe 'modal-overlay'
+  if (e.target.classList.contains("modal-overlay")) {
+    e.target.style.display = "none";
+    document.body.style.overflow = "auto";
+  }
+
+  // Si l'élément cliqué est le bouton de fermeture X
+  if (e.target.classList.contains("btn-fermer")) {
+    e.target.closest(".modal-overlay").style.display = "none";
+    document.body.style.overflow = "auto";
+  }
+}
+
+});
+
