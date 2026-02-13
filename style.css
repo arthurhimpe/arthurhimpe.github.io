@@ -366,15 +366,18 @@ img {
 ========================================================= */
 @media (max-width: 600px) {
   .projets-container {
-    /* Force le passage en colonne unique et centre l'élément */
-    flex-direction: column;
-    align-items: center; /* Centre horizontalement */
+    /* On passe en grille 1 colonne comme pour centres d'intérêts */
+    display: grid;
+    grid-template-columns: 1fr; /* 1 seule colonne */
+    gap: 20px;
     padding: 15px;
+    align-items: center; /* Centre les éléments */
   }
   
   .projets-container .projet {
-    width: 90%; /* Occupe 90% de la largeur sur mobile */
+    width: 100%; /* Occupe toute la largeur disponible */
     max-width: 400px; /* Limite la largeur maximale */
+    margin: 0 auto; /* Centre le projet dans sa colonne */
   }
 }
 @media (max-width: 600px) {
@@ -750,3 +753,81 @@ nav a {
 }
 
 
+/* Section Compétences */
+
+.competences-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 40px;
+}
+
+.competence {
+  background-color: white;
+  border-radius: 15px;
+  padding: 25px 20px;
+  width: 80px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.competence-img {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.competence-img img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.competence-titre {
+  font-size: 16px;
+  font-weight: 600;
+  color: #6b5122;
+  margin: 0;
+}
+
+/* Version Mobile - 2 blocs par ligne */
+@media (max-width: 768px) {
+  .competences-container {
+    gap: 20px;
+    padding: 0 10px;
+  }
+  
+  .competence {
+    width: calc(50% - 10px); /* 2 blocs par ligne avec espacement */
+    max-width: 150px;
+    padding: 20px 15px;
+  }
+  
+  .competence-img {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .competence-titre {
+    font-size: 12px;
+  }
+}
+
+/* Très petits écrans */
+@media (max-width: 400px) {
+  .competence {
+    width: calc(50% - 10px);
+    max-width: none;
+    padding: 15px 10px;
+  }
+  
+  .competence-img {
+    width: 50px;
+    height: 50px;
+  }
+}
