@@ -377,6 +377,7 @@ img {
   .projets-container .projet {
     width: 100%; /* Occupe toute la largeur disponible */
     max-width: 400px; /* Limite la largeur maximale */
+    min-width: auto; /* ← RÉINITIALISE le min-width pour mobile */
   }
 }
 @media (max-width: 600px) {
@@ -802,7 +803,7 @@ nav a {
   }
   
   .competence {
-    width: calc(50% - 10px); /* 2 blocs par ligne avec espacement */
+    width: calc(50% - 20px); /* 2 blocs par ligne avec espacement */
     max-width: 150px;
     padding: 20px 15px;
   }
