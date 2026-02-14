@@ -754,12 +754,11 @@ nav a {
 
 
 /* Section Compétences */
-
 .competences-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 10px;
+  gap: 30px;
   margin-top: 40px;
 }
 
@@ -767,10 +766,15 @@ nav a {
   background-color: white;
   border-radius: 15px;
   padding: 25px 20px;
-  width: 80px;
+  width: 80px; /* 80px sur PC comme vous voulez */
   text-align: center;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.competence:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
 }
 
 .competence-img {
@@ -789,23 +793,24 @@ nav a {
 }
 
 .competence-titre {
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 600;
-  color: #6b5122;
+  color: #623802;
   margin: 0;
 }
 
 /* Version Mobile - 2 blocs par ligne */
 @media (max-width: 768px) {
   .competences-container {
-    gap: 20px;
+    gap: 15px;
     padding: 0 10px;
   }
   
   .competence {
-    width: calc(50% - 20px); /* 2 blocs par ligne avec espacement */
-    max-width: 150px;
-    padding: 20px 15px;
+    width: calc(50% - 8px) !important; /* Force 2 par ligne */
+    max-width: none;
+    min-width: auto;
+    padding: 20px 10px;
   }
   
   .competence-img {
