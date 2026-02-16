@@ -814,7 +814,7 @@ nav a {
     width: calc(50% - 8px) !important; /* Force 2 par ligne */
     max-width: none;
     min-width: auto;
-    padding: 20px 10px;
+    padding: 20px 0px;
   }
   
   .competence-img {
@@ -823,6 +823,6 @@ nav a {
   }
   
   .competence-titre {
-    font-size: 12px;
+    font-size: 14px;
   }
 }
