@@ -801,6 +801,11 @@ nav a {
 /* Version Mobile - 2 blocs par ligne */
 @media (max-width: 768px) {
   .competences-container {
+    display: grid;
+    grid-template-columns: 2fr; /* 1 seule colonne */
+    justify-content: center;
+    gap: 10px;
+    margin-top: 40px;
     gap: 15px;
     padding: 0 10px;
   }
