@@ -791,7 +791,14 @@ nav a {
   object-fit: contain;
 }
 
-.competence-titre {
+.competence-titre1 {
+  font-size: 14px;
+  font-weight: 600;
+  color: #623802;
+  margin: 0;
+}
+
+.competence-titre2 {
   font-size: 14px;
   font-weight: 600;
   color: #623802;
@@ -822,7 +829,10 @@ nav a {
     height: 60px;
   }
   
-  .competence-titre {
+  .competence-titre1 {
     font-size: 14px;
+  }
+  .competence-titre2 {
+  font-size: 20px;
   }
 }
