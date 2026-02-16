@@ -366,37 +366,13 @@ img {
 ========================================================= */
 @media (max-width: 600px) {
   .projets-container {
+    display: grid;
     /* Sur mobile : On passe à 1 seule colonne pour centrer le contenu */
-    grid-template-columns: repeat(1,1fr);
+    grid-template-columns: 1fr;
     padding: 15px; /* On réduit un peu le padding pour gagner de la place */
+    box-sizing: border-box; 
   }
 }
-
-/* On définit la largeur des projets pour simuler les 3 colonnes */
-.projets-container .projet {
-  width: calc(33.333% - 20px); /* 3 colonnes moins l'espace du gap */
-  min-width: 280px; /* Empêche la box de devenir trop étroite */
-  box-sizing: border-box;
-  
-}
-
-.projets-container-CI {
-  display: grid;
-  /* Sur ordinateur : 2 colonnes */
-  grid-template-columns: repeat(2, 1fr); 
-  gap: 20px;
-  margin-top: 20px;
-  width: 100%;
-  max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 20px;
-  /* Sécurité anti-débordement */
-  box-sizing: border-box; 
-}
-
-
-
 
 @media (max-width: 600px) {
   .projets-container-CI {
@@ -852,7 +828,7 @@ nav a {
   font-size: 14px;
   }
   .competence-titre2 {
-  font-size: 20px;
+  font-size: 10px;
   font-weight: bold;  
   }
 }
