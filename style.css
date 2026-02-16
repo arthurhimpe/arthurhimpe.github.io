@@ -367,11 +367,16 @@ img {
 @media (max-width: 600px) {
   .projets-container {
     display: grid;
-    /* Sur mobile : On passe à 1 seule colonne pour centrer le contenu */
     grid-template-columns: 1fr;
     width: 100%;
-    min-width: 100px; /* Empêche la box de devenir trop étroite */
-    padding: 15px; /* On réduit un peu le padding pour gagner de la place */
+    padding: 0px;
+  }
+  
+  /* 🔧 Force les cartes à occuper toute la largeur */
+  .projets-container .projet {
+    width: 100%;
+    min-width: auto;
+    max-width: none;
   }
 }
 
