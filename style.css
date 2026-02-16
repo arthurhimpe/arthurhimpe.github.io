@@ -372,7 +372,6 @@ img {
     width: 100%;
     min-width: 100px; /* Empêche la box de devenir trop étroite */
     padding: 15px; /* On réduit un peu le padding pour gagner de la place */
-    box-sizing: border-box; 
   }
 }
 
@@ -818,7 +817,7 @@ nav a {
     width: calc(50% - 10px) !important; /* Force 2 par ligne */
     max-width: none;
     min-width: auto;
-    padding: 20px 30px;
+    padding: 20px 40px;
   }
   
   .competence-img {
@@ -830,6 +829,6 @@ nav a {
   font-size: 14px;
   }
   .competence-titre2 {
-  font-size: 20px;
+  font-size: 14px;
   }
 }
