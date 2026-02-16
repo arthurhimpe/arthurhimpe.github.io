@@ -369,15 +369,14 @@ img {
     /* On passe en grille 1 colonne comme pour centres d'intérêts */
     display: grid;
     grid-template-columns: 1fr; /* 1 seule colonne */
-    gap: 20px;
+    margin-top: 20px;
+    width: 100%;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
     padding: 15px;
-    justify-items: center; /* CRUCIAL : Centre les éléments dans la grille */
-  }
-  
-  .projets-container .projet {
-    width: 100%; /* Occupe toute la largeur disponible */
-    max-width: 400px; /* Limite la largeur maximale */
-    min-width: auto; /* ← RÉINITIALISE le min-width pour mobile */
+    /* Sécurité anti-débordement */
+    box-sizing: border-box; 
   }
 }
 @media (max-width: 600px) {
