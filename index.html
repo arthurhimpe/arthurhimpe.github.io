@@ -76,11 +76,11 @@
         </div>
 
         <div class="projet">
-          <img src="images/projet Fab/projet fab2.png" />
-          <h3>Le projet Fab</h3>
+          <img src="images/projet machine learning/correlation random forest pieces.png"/>
+          <h3>Le projet Machine Learning</h3>
           <div class="projet-actions">
-            <button class="btn-ouvrir" data-modal="modal-fab"><span style="margin-right:5px;">🔍</span>Détails</button>
-            <a href="rapport-projet-fab.pdf" target="_blank" class="btn-pdf"
+            <button class="btn-ouvrir" data-modal="modal-machine"><span style="margin-right:5px;">🔍</span>Détails</button>
+            <a href="Projet machine learning.pdf" target="_blank" class="btn-pdf"
               >Rapport (pdf)</a
             >
           </div>
@@ -95,6 +95,17 @@
               <span style="margin-right:5px;">🔍</span>Détails
             </button>
             <a href="CAMEX-IA-MYCOTECH.pdf" target="_blank" class="btn-pdf"
+              >Rapport (pdf)</a
+            >
+          </div>
+        </div>
+
+        <div class="projet">
+          <img src="images/projet Fab/projet fab2.png" />
+          <h3>Le projet Fab</h3>
+          <div class="projet-actions">
+            <button class="btn-ouvrir" data-modal="modal-fab"><span style="margin-right:5px;">🔍</span>Détails</button>
+            <a href="rapport-projet-fab.pdf" target="_blank" class="btn-pdf"
               >Rapport (pdf)</a
             >
           </div>
@@ -366,6 +377,40 @@
                     <p>Utilisation de <strong>CATIA V5</strong> pour la modélisation 3D complète, avec calculs de résistance pour les arbres, les roulements et le dimensionnement des engrenages. Validation par simulation par éléments finis (FEA) sous <strong>SolidWorks</strong>.</p>
                     <h3>Innovations et Matériaux</h3>
                     <p>Optimisation du profil de denture pour réduire le bruit et améliorer l'efficacité. Sélection de matériaux appropriés (acier traité dans la masse <strong>35CrMo4</strong>) pour garantir la durée de vie spécifiée.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="modal-machine" class="modal-overlay">
+    <div class="modal-carre">
+        <span class="btn-fermer">&times;</span>
+        <h2 class="modal-titre-centre">Projet Machine Learning</h2>
+        <div class="modal-scroll-container">
+            <div class="modal-row"> 
+                <div class="modal-col-txt">
+                    <h3>Contexte du Projet</h3>
+                    <p>Développement d'algorithmes de prédiction du prix au m² d'appartements parisiens à partir de données de localisation et de caractéristiques physiques. Exploitation du fichier des valeurs foncières géolocalisées (DVF) pour entraîner des modèles de Machine Learning.</p>
+                </div>
+            </div>
+            <div class="modal-row reverse">
+                <div class="modal-col-img">
+                    <img src="images/projet machine learning/tracé heatmap Paris carte.png" alt="Carte des prix immobiliers Paris">
+                </div>
+                <div class="modal-col-txt">
+                    <h3>Données et Préparation</h3>
+                    <ul style="list-style: none; padding: 0;">
+                        <li>📊 <strong>Transactions analysées :</strong> 5671 appartements</li>
+                        <li>📍 <strong>Zone :</strong> Paris (20 arrondissements)</li>
+                        <li>📏 <strong>Surface :</strong> 40 à 200 m²</li>
+                        <li>💰 <strong>Fourchette de prix :</strong> 5 000 à 25 000 €/m²</li>
+                    </ul>
+                </div>
+            </div>
+<div class="modal-row reverse">
+                <div class="modal-col-txt">
+                    <h3>Algorithmes et Technologies</h3>
+                    <p>Deux algorithmes de Machine Learning ont été développés et comparés : <strong>K-Nearest Neighbors (KNN)</strong> et <strong>Random Forest</strong>. L'implémentation a été réalisée en <strong>Python</strong> avec les bibliothèques <strong>Pandas</strong>, <strong>NumPy</strong> et <strong>Scikit-learn</strong> pour le traitement des données et l'entraînement des modèles. Les visualisations ont été créées avec <strong>Matplotlib</strong> et <strong>Seaborn</strong>, incluant des analyses de corrélation, des matrices de confusion et l'importance des variables. Une validation croisée et l'optimisation des hyperparamètres ont permis d'affiner les performances de chaque algorithme.</p>
                 </div>
             </div>
         </div>
