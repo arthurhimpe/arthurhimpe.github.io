@@ -755,22 +755,24 @@ nav a {
 
 /* Section Compétences */
 .competences-container {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(4, 80px); /* Exactement 4 colonnes de 80px */
   justify-content: center;
-  gap: 10px;
+  column-gap: 90px; /* Espacement horizontal (entre les colonnes) */
+  row-gap: 20px;    /* Espacement vertical (entre les lignes) */
   margin-top: 40px;
 }
 
 .competence {
   background-color: white;
   border-radius: 15px;
-  padding: 10px 20px;
-  width: 80px; /* 80px sur PC comme vous voulez */
+  padding: 10px 30px;
+  width: 80px;
   text-align: center;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
 
 .competence:hover {
   transform: translateY(-5px);
